@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONVOCAÇÕES</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="lib/jquery-3.3.1.min.js"></script>
+    <script src="lib/scripts.js"></script>
+</head>
+
+<body>
+    <div class="barraTop">&nbsp;</div>
+    
+    <div class="container page">
+        <!-- Barra Superior -->
+        <div class="row barraSuperior">
+            <div class="col-xs-1">
+                <img src="imagens/pjf_logo.png" class="PJFLogo">
+            </div>
+            <div class="col-xs-11" style="text-align: right;">
+                <span class="PJFTexto">PREFEITURA MUNICIPAL DE JUIZ DE FORA</span><br>
+                <span class="subtitulo">Convocações <strong>2025</strong></span>
+            </div>
+        </div>
+
+        <!-- Nome do convocado -->
+        <div class="row">
+            <div class="senhaAtual">
+                <div class="row">
+                    <div class="nome">NOME DA PESSOA CHAMADA </div>
+                    
+                    <!-- Container para ORDEM + número -->
+                    <div class="senhaContainer">
+                        <span class="senhaAtualTexto">ORDEM</span>
+                        <span id="senhaAtualNumero">0000</span>
+                    </div>
+
+                    <input type="hidden" id="senhaNormal" value="0000">
+                </div>
+            </div>
+        </div>
+
+        <!-- Guichê -->
+	
+	<div class="row">
+		<div class="col-xs-4 col-xs-offset-4 ultimaSenha">
+			<br>
+			<span id="ultimaSenhaTexto">DIGITE O NÚMERO DO GUICHÊ</span><br>
+			<span id="ultimaSenhaNumero" class="editavel">0</span>
+			<input type="text" id="inputGuiche" class="inputEscondido">
+		</div>
+	</div>
+
+
+    <audio id="audioChamada" src="audio/chamada.wav"></audio>
+</body>
+</html>
