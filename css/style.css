@@ -11,8 +11,8 @@
     text-align: center;
     background-color: #003a5f;
     color: white;
-    margin-top: 0px;
-    padding: 20px;
+    margin-top: 5px;
+    padding: 30px;
     width: 100%;
 }
 
@@ -25,9 +25,11 @@
 }
 
 .senhaAtualTexto, #senhaAtualNumero {
-    font-size: 35pt;
+    font-size: 30pt;
     font-weight: 800;
     white-space: nowrap; /* Evita quebra de linha */
+    margin-top: 40px;
+    margin-bottom: -25px;
 }
 
 .nome {
