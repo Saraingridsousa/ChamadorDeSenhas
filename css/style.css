@@ -100,7 +100,7 @@ body {
 .ultimaSenha {
     font-weight: 800;
     text-align: center;
-    background-color: #ccc;
+    background-color: #003a5f;
     height: 130px;
     margin-top: 20px;
     padding: 10px;
@@ -108,12 +108,12 @@ body {
 
 #ultimaSenhaTexto {
     font-size: 20px;
-    color: #a50;
+    color: white;
 }
 
 #ultimaSenhaNumero {
     font-size: 40px;
-    color: black;
+    color: white;
 }
 
 .PJFLogo {
