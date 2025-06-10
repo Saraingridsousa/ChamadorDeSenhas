@@ -103,18 +103,19 @@ body {
     background-color: #003a5f;
     height: 130px;
     margin-top: 20px;
+    margin-bottom: 20px;
     padding: 10px;
 }
 
 #ultimaSenhaTexto {
-    font-size: 20px;
+    font-size: 30px;
     color: white;
 }
 
-#ultimaSenhaNumero {
+/*#ultimaSenhaNumero {
     font-size: 40px;
     color: white;
-}
+}*/
 
 .PJFLogo {
     max-width: 150px;
