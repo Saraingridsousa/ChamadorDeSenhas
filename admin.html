@@ -11,7 +11,30 @@
 </head>
 <body>
     <div id="navbar-container"></div>
-    <div class="barraTop">&nbsp;</div>
+    
+    <!-- Tela de Login -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-container">
+            <div class="login-header">
+                <img src="imagens/pjf_logo.png" class="login-logo">
+                <h2>🔒 Acesso Administrativo</h2>
+                <p>Digite a senha para acessar a administração</p>
+            </div>
+            <form id="loginForm" class="login-form">
+                <div class="input-group">
+                    <input type="password" id="passwordInput" placeholder="Senha de acesso" required>
+                    <button type="submit" class="btn-login">Entrar</button>
+                </div>
+                <div id="loginError" class="login-error" style="display: none;">
+                    ❌ Senha incorreta! Tente novamente.
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal (inicialmente oculto) -->
+    <div id="adminContent" style="display: none;">
+        <div class="barraTop">&nbsp;</div>
     
     <div class="container page">
         <!-- Barra Superior -->
@@ -88,6 +111,43 @@
         </div>
     </div>
 
+    </div> <!-- Fim do adminContent -->
+
+    <script>
+        // Sistema de autenticação
+        const correctPassword = "mg@123";
+        
+        // Verifica se já está logado (sessão)
+        if (sessionStorage.getItem("adminAuthenticated") === "true") {
+            document.getElementById("loginScreen").style.display = "none";
+            document.getElementById("adminContent").style.display = "block";
+        }
+        
+        // Handler do formulário de login
+        document.getElementById("loginForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const password = document.getElementById("passwordInput").value;
+            const errorDiv = document.getElementById("loginError");
+            
+            if (password === correctPassword) {
+                // Senha correta - salva na sessão e mostra o conteúdo
+                sessionStorage.setItem("adminAuthenticated", "true");
+                document.getElementById("loginScreen").style.display = "none";
+                document.getElementById("adminContent").style.display = "block";
+                errorDiv.style.display = "none";
+            } else {
+                // Senha incorreta
+                errorDiv.style.display = "block";
+                document.getElementById("passwordInput").value = "";
+                document.getElementById("passwordInput").focus();
+            }
+        });
+        
+        // Logout quando fechar a aba/navegador
+        window.addEventListener("beforeunload", function() {
+            sessionStorage.removeItem("adminAuthenticated");
+        });
+    </script>
     <script src="lib/admin.js"></script>
 </body>
 </html>
