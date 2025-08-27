@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração - Chamador de Senhas</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/admin.css" rel="stylesheet">
+    <script src="lib/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div id="navbar-container"></div>
+    <div class="barraTop">&nbsp;</div>
+    
+    <div class="container page">
+        <!-- Barra Superior -->
+        <div class="row barraSuperior">
+            <div class="col-xs-1">
+                <img src="imagens/pjf_logo.png" class="PJFLogo">
+            </div>
+            <div class="col-xs-11" style="text-align: right;">
+                <span class="PJFTexto">PREFEITURA MUNICIPAL DE JUIZ DE FORA</span><br>
+                <span class="subtitulo">Administração do Sistema - <strong>Chamador de Senhas</strong></span>
+            </div>
+        </div>
+
+        <!-- Seção de Upload -->
+        <div class="row admin-section">
+            <div class="col-xs-12">
+                <h2 class="admin-title">📁 Gerenciar Arquivos Excel</h2>
+                <p class="admin-description">Faça upload dos arquivos Excel com as listas de convocados para cada categoria.</p>
+                
+                <!-- Área de Upload -->
+                <div class="upload-area">
+                    <div class="upload-zone" id="uploadZone">
+                        <div class="upload-icon">📎</div>
+                        <p>Clique aqui ou arraste os arquivos Excel (.xlsx)</p>
+                        <input type="file" id="fileInput" accept=".xlsx,.xls" multiple style="display: none;">
+                        <button class="btn-upload" onclick="document.getElementById('fileInput').click()">
+                            Selecionar Arquivos
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Lista de Arquivos Carregados -->
+                <div class="files-section">
+                    <h3>📋 Arquivos Configurados</h3>
+                    <div id="filesList" class="files-list">
+                        <!-- Arquivos serão listados aqui dinamicamente -->
+                    </div>
+                </div>
+
+                <!-- Seção de Mapeamento -->
+                <div class="mapping-section">
+                    <h3>🔗 Associar Arquivos às Páginas</h3>
+                    <div id="mappingContainer" class="mapping-container">
+                        <!-- Mapeamentos serão exibidos aqui -->
+                    </div>
+                </div>
+
+                <!-- Botões de Ação -->
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="saveConfig">💾 Salvar Configurações</button>
+                    <button class="btn btn-secondary" id="resetConfig">🔄 Resetar</button>
+                    <button class="btn btn-success" id="testConfig">🧪 Testar Sistema</button>
+                </div>
+
+                <!-- Status/Log -->
+                <div class="status-section">
+                    <h3>📊 Status do Sistema</h3>
+                    <div id="statusLog" class="status-log">
+                        <p class="status-item success">✅ Sistema iniciado</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Configuração -->
+        <div id="configModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>⚙️ Configurar Arquivo</h3>
+                <div id="modalContent">
+                    <!-- Conteúdo do modal será preenchido dinamicamente -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="lib/admin.js"></script>
+</body>
+</html>
