@@ -1,4 +1,4 @@
-# 🌟 Sistema de Chamada Pública - Prefeitura de Juiz de Fora
+# Sistema de Chamada Pública - Prefeitura de Juiz de Fora
 
 Um sistema web dinâmico e amigável desenvolvido para otimizar o processo de **convocação e chamada de professores e servidores** em processos seletivos públicos.
 
